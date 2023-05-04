@@ -3,6 +3,7 @@ import { tasks as data} from "../data/Tasks.js";
 
 export const TaskContext = createContext();
 
+//componente
 export function TaskContextProvider(props) {
   const [tasks, setTasks] = useState([]);
 
@@ -24,12 +25,16 @@ export function TaskContextProvider(props) {
     console.log("deleted id: " + id);
   }
 
+  //retorna el provider
   return (
     <TaskContext.Provider value={{
       tasks,
       createTask,
       deleteTask
     }}>
+      {/* {props.children}: se reemplaza codigo de app */}
+      {/* todo el codigo de la aplicacion va aqui */}
+      {/* desde el main */}
       {props.children}
     </TaskContext.Provider>
   );
